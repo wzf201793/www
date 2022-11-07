@@ -20,7 +20,7 @@ import android.text.TextUtils;
 public class Utility {
 
 	/**
-	 * ½âÎöºÍ´¦Àí·şÎñÆ÷·µ»ØµÄÊ¡¼¶Êı¾İ
+	 * è§£æå’Œå¤„ç†æœåŠ¡å™¨è¿”å›çš„çœçº§æ•°æ®
 	 */
 	public synchronized static boolean handleProvincesResponse(
 			CoolWeatherDB coolWeatherDB, String response) {
@@ -32,7 +32,7 @@ public class Utility {
 					Province province = new Province();
 					province.setProvinceCode(array[0]);
 					province.setProvinceName(array[1]);
-					// ½«½âÎö³öÀ´µÄÊı¾İ´æ´¢µ½Province±í
+					// å°†è§£æå‡ºæ¥çš„æ•°æ®å­˜å‚¨åˆ°Provinceè¡¨
 					coolWeatherDB.saveProvince(province);
 				}
 				return true;
@@ -42,7 +42,7 @@ public class Utility {
 	}
 
 	/**
-	 * ½âÎöºÍ´¦Àí·şÎñÆ÷·µ»ØµÄÊĞ¼¶Êı¾İ
+	 * è§£æå’Œå¤„ç†æœåŠ¡å™¨è¿”å›çš„å¸‚çº§æ•°æ®
 	 */
 	public static boolean handleCitiesResponse(CoolWeatherDB coolWeatherDB,
 			String response, int provinceId) {
@@ -55,7 +55,7 @@ public class Utility {
 					city.setCityCode(array[0]);
 					city.setCityName(array[1]);
 					city.setProvinceId(provinceId);
-					// ½«½âÎö³öÀ´µÄÊı¾İ´æ´¢µ½City±í
+					// å°†è§£æå‡ºæ¥çš„æ•°æ®å­˜å‚¨åˆ°Cityè¡¨
 					coolWeatherDB.saveCity(city);
 				}
 				return true;
@@ -65,7 +65,7 @@ public class Utility {
 	}
 
 	/**
-	 * ½âÎöºÍ´¦Àí·şÎñÆ÷·µ»ØµÄÏØ¼¶Êı¾İ
+	 * è§£æå’Œå¤„ç†æœåŠ¡å™¨è¿”å›çš„å¿çº§æ•°æ®
 	 */
 	public static boolean handleCountiesResponse(CoolWeatherDB coolWeatherDB,
 			String response, int cityId) {
@@ -78,7 +78,7 @@ public class Utility {
 					county.setCountyCode(array[0]);
 					county.setCountyName(array[1]);
 					county.setCityId(cityId);
-					// ½«½âÎö³öÀ´µÄÊı¾İ´æ´¢µ½Coutry±í
+					// å°†è§£æå‡ºæ¥çš„æ•°æ®å­˜å‚¨åˆ°Coutryè¡¨
 					coolWeatherDB.saveCounty(county);
 				}
 				return true;
@@ -88,7 +88,7 @@ public class Utility {
 	}
 
 	/**
-	 *½âÎöºÍ´¦Àí·şÎñÆ÷·µ»ØµÄJSONÀàĞÍÌìÆøÊı¾İ
+	 *è§£æå’Œå¤„ç†æœåŠ¡å™¨è¿”å›çš„JSONç±»å‹å¤©æ°”æ•°æ®
 	 */
 	public static void handleWeatherResponse(Context context, String response) {
 		try {
@@ -108,7 +108,7 @@ public class Utility {
 	}
 
 	/**
-	 * ½«½âÎö³öÀ´µÄÊı¾İ´æ´¢µ½±¾µØsharedpreferencesÖĞ
+	 * å°†è§£æå‡ºæ¥çš„æ•°æ®å­˜å‚¨åˆ°æœ¬åœ°sharedpreferencesä¸­
 	 */
 	public static void saveWeatherInfo(Context context, String cityName,
 			String weatherCode, String temp1, String temp2, String weatherDesp,
@@ -126,5 +126,6 @@ public class Utility {
 		editor.putString("current_date", sdf.format(new Date()));
 		editor.commit();
 	}
+	//2022/11/07 test
 
 }
